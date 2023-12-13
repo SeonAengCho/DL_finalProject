@@ -12,6 +12,7 @@ from functions import remove_duplicate
 
 lr = 0.001
 max_grad = 0.25
+epoch = 100
 
 print("data load")
 
@@ -36,11 +37,11 @@ layer2 = TimeAffine(affine_W, affine_b)
 optimizer = Adam(lr)
 
 # train
-for epoch in tqdm(range(1)):
+for epoch in tqdm(range(epoch)):
     
     loss_per_epoch = []
     
-    for data in range(10):
+    for data in range(len(X_train):
         
         # forward
         hs = layer1.forward((X_train[data]))
